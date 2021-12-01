@@ -1,0 +1,32 @@
+{
+  "name": "advent-of-code-2021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Infinituum17/advent-of-code-2021.git"
+  },
+  "keywords": [
+    "node",
+    "advent-of-code",
+    "2021"
+  ],
+  "author": "Infinituum",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Infinituum17/advent-of-code-2021/issues"
+  },
+  "homepage": "https://github.com/Infinituum17/advent-of-code-2021#readme",
+  "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.11",
+    "jest": "^27.4.3",
+    "ts-node": "^10.4.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.2"
+  }
+}
