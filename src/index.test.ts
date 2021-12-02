@@ -39,3 +39,29 @@ describe("Day One", () => {
     expect(resolver(input)).toBe(1378);
   });
 });
+
+describe("Day Two", () => {
+  test("Dive!: Part One", async () => {
+    const module = await import("../day-2-dive!/part-one");
+    const depthCalculator = module.depthCalculator;
+    const horizontalCalculator = module.horizontalCalculator;
+    const resolver = module.default;
+
+    // Test cases
+    const testInput =
+      "forward 5\ndown 5\nforward 8\nup 3\ndown 8\nforward 2".split(/\n/gim);
+
+    expect(horizontalCalculator(testInput)).toBe(15);
+
+    expect(depthCalculator(testInput)).toBe(10);
+
+    expect(resolver(testInput)).toBe(150);
+
+    // Solution (...)
+    const input = (await readInputFile("./day-2-dive!/input.txt")).split(
+      /\n/gim
+    );
+
+    expect(resolver(input)).toBe(1604850);
+  });
+});
