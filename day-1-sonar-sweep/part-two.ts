@@ -1,5 +1,4 @@
-export default function resolver(input: string, debug = false): number {
-  const depths = input.split(/\n/gim).map((num) => parseInt(num));
+export default function resolver(depths: number[]): number {
   const values: number[] = [];
   const output: string[] = [];
 
@@ -13,28 +12,14 @@ export default function resolver(input: string, debug = false): number {
     const sum = previousValue + currentValue + nextValue;
 
     if (i === 1) {
-      if (debug) output.push(`${sum} (N/A - no previous sum)`);
-
       values.push(sum);
 
       continue;
-    }
-
-    if (values[values.length - 1] < sum) {
-      if (debug) output.push(`${sum} (increased)`);
-
+    } else if (values[values.length - 1] < sum) {
       increaseCount++;
-    } else if (values[values.length - 1] > sum) {
-      if (debug) output.push(`${sum} (decreased)`);
-    } else {
-      if (debug) output.push(`${sum} (equal)`);
     }
 
     values.push(sum);
-  }
-
-  if (debug) {
-    console.log(output.join("\n"));
   }
 
   return increaseCount;

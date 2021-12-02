@@ -1,19 +1,21 @@
 import { readInputFile } from "./utils";
 
-const debug = false;
-
 describe("Day One", () => {
   test("Sonar Sweep: Part One", async () => {
     const module = await import("../day-1-sonar-sweep/part-one");
     const resolver = module.default;
 
     // Test cases
-    const testInput = "199\n200\n208\n210\n200\n207\n240\n269\n260\n263";
+    const testInput = "199\n200\n208\n210\n200\n207\n240\n269\n260\n263"
+      .split(/\n/gim)
+      .map((num) => parseInt(num));
 
-    expect(resolver(testInput, debug)).toBe(7);
+    expect(resolver(testInput)).toBe(7);
 
     // Solution (1342)
-    const input = await readInputFile("./day-1-sonar-sweep/input.txt");
+    const input = (await readInputFile("./day-1-sonar-sweep/input.txt"))
+      .split(/\n/gim)
+      .map((num) => parseInt(num));
 
     expect(resolver(input)).toBe(1342);
   });
@@ -23,12 +25,16 @@ describe("Day One", () => {
     const resolver = module.default;
 
     // Test cases
-    const testInput = "199\n200\n208\n210\n200\n207\n240\n269\n260\n263";
+    const testInput = "199\n200\n208\n210\n200\n207\n240\n269\n260\n263"
+      .split(/\n/gim)
+      .map((num) => parseInt(num));
 
-    expect(resolver(testInput, true)).toBe(5);
+    expect(resolver(testInput)).toBe(5);
 
     // Solution (...)
-    const input = await readInputFile("./day-1-sonar-sweep/input.txt");
+    const input = (await readInputFile("./day-1-sonar-sweep/input.txt"))
+      .split(/\n/gim)
+      .map((num) => parseInt(num));
 
     expect(resolver(input)).toBe(1378);
   });
