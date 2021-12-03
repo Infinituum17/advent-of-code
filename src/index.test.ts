@@ -2,7 +2,7 @@ import { readLines } from "./utils";
 
 describe("Day 1: Sonar Sweep", () => {
   test("Part 1", async () => {
-    const module = await import("../day-1-sonar-sweep/part-one");
+    const module = await import("../day-01/part-one");
     const resolver = module.default;
 
     // Test cases
@@ -13,15 +13,15 @@ describe("Day 1: Sonar Sweep", () => {
     expect(resolver(testInput)).toBe(7);
 
     // Solution (1342)
-    const input = (await readLines("./day-1-sonar-sweep/input.txt")).map(
-      (num) => parseInt(num)
+    const input = (await readLines("./day-01/input.txt")).map((num) =>
+      parseInt(num)
     );
 
     expect(resolver(input)).toBe(1342);
   });
 
   test("Part 2", async () => {
-    const module = await import("../day-1-sonar-sweep/part-two");
+    const module = await import("../day-01/part-two");
     const resolver = module.default;
 
     // Test cases
@@ -32,8 +32,8 @@ describe("Day 1: Sonar Sweep", () => {
     expect(resolver(testInput)).toBe(5);
 
     // Solution (...)
-    const input = (await readLines("./day-1-sonar-sweep/input.txt")).map(
-      (num) => parseInt(num)
+    const input = (await readLines("./day-01/input.txt")).map((num) =>
+      parseInt(num)
     );
 
     expect(resolver(input)).toBe(1378);
@@ -42,7 +42,7 @@ describe("Day 1: Sonar Sweep", () => {
 
 describe("Day 2: Dive!", () => {
   test("Part 1", async () => {
-    const module = await import("../day-2-dive!/part-one");
+    const module = await import("../day-02/part-one");
     const { depthCalculator, horizontalCalculator } = module;
     const resolver = module.default;
 
@@ -57,13 +57,13 @@ describe("Day 2: Dive!", () => {
     expect(resolver(testInput)).toBe(150);
 
     // Solution (...)
-    const input = await readLines("./day-2-dive!/input.txt");
+    const input = await readLines("./day-02/input.txt");
 
     expect(resolver(input)).toBe(1604850);
   });
 
   test("Part 2", async () => {
-    const module = await import("../day-2-dive!/part-two");
+    const module = await import("../day-02/part-two");
     const resolver = module.default;
 
     // Test cases
@@ -73,7 +73,7 @@ describe("Day 2: Dive!", () => {
     expect(resolver(testInput)).toBe(900);
 
     // Solution (...)
-    const input = await readLines("./day-2-dive!/input.txt");
+    const input = await readLines("./day-02/input.txt");
 
     expect(resolver(input)).toBe(1685186100);
   });
