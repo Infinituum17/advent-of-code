@@ -1,7 +1,7 @@
 import { readLines } from "./utils";
 
-describe("Day One", () => {
-  test("Sonar Sweep: Part One", async () => {
+describe("Day 1: Sonar Sweep", () => {
+  test("Part 1", async () => {
     const module = await import("../day-1-sonar-sweep/part-one");
     const resolver = module.default;
 
@@ -20,7 +20,7 @@ describe("Day One", () => {
     expect(resolver(input)).toBe(1342);
   });
 
-  test("Sonar Sweep: Part Two", async () => {
+  test("Part 2", async () => {
     const module = await import("../day-1-sonar-sweep/part-two");
     const resolver = module.default;
 
@@ -40,8 +40,8 @@ describe("Day One", () => {
   });
 });
 
-describe("Day Two", () => {
-  test("Dive!: Part One", async () => {
+describe("Day 2: Dive!", () => {
+  test("Part 1", async () => {
     const module = await import("../day-2-dive!/part-one");
     const { depthCalculator, horizontalCalculator } = module;
     const resolver = module.default;
@@ -62,7 +62,7 @@ describe("Day Two", () => {
     expect(resolver(input)).toBe(1604850);
   });
 
-  test("Dive!: Part Two", async () => {
+  test("Part 2", async () => {
     const module = await import("../day-2-dive!/part-two");
     const resolver = module.default;
 
