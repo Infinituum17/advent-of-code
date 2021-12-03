@@ -1,15 +1,15 @@
 import { readLines } from "./utils";
 
 describe("Day 1: Sonar Sweep", () => {
+  const testInput = "199\n200\n208\n210\n200\n207\n240\n269\n260\n263"
+    .split(/\n/gim)
+    .map((num) => parseInt(num));
+
   test("Part 1", async () => {
     const module = await import("../day-01/part-one");
     const resolver = module.default;
 
     // Test cases
-    const testInput = "199\n200\n208\n210\n200\n207\n240\n269\n260\n263"
-      .split(/\n/gim)
-      .map((num) => parseInt(num));
-
     expect(resolver(testInput)).toBe(7);
 
     // Solution (1342)
@@ -25,10 +25,6 @@ describe("Day 1: Sonar Sweep", () => {
     const resolver = module.default;
 
     // Test cases
-    const testInput = "199\n200\n208\n210\n200\n207\n240\n269\n260\n263"
-      .split(/\n/gim)
-      .map((num) => parseInt(num));
-
     expect(resolver(testInput)).toBe(5);
 
     // Solution (1378)
@@ -41,15 +37,15 @@ describe("Day 1: Sonar Sweep", () => {
 });
 
 describe("Day 2: Dive!", () => {
+  const testInput =
+    "forward 5\ndown 5\nforward 8\nup 3\ndown 8\nforward 2".split(/\n/gim);
+
   test("Part 1", async () => {
     const module = await import("../day-02/part-one");
     const { depthCalculator, horizontalCalculator } = module;
     const resolver = module.default;
 
     // Test cases
-    const testInput =
-      "forward 5\ndown 5\nforward 8\nup 3\ndown 8\nforward 2".split(/\n/gim);
-
     expect(horizontalCalculator(testInput)).toBe(15);
 
     expect(depthCalculator(testInput)).toBe(10);
@@ -67,9 +63,6 @@ describe("Day 2: Dive!", () => {
     const resolver = module.default;
 
     // Test cases
-    const testInput =
-      "forward 5\ndown 5\nforward 8\nup 3\ndown 8\nforward 2".split(/\n/gim);
-
     expect(resolver(testInput)).toBe(900);
 
     // Solution (1685186100)
@@ -80,6 +73,11 @@ describe("Day 2: Dive!", () => {
 });
 
 describe("Day 3: Binary Diagnostic", () => {
+  const testInput =
+    "00100\n11110\n10110\n10111\n10101\n01111\n00111\n11100\n10000\n11001\n00010\n01010".split(
+      /\n/gim
+    );
+
   test("Part 1", async () => {
     const module = await import("../day-03/part-one");
     const countBits = module.countBits;
@@ -88,11 +86,6 @@ describe("Day 3: Binary Diagnostic", () => {
     const resolver = module.default;
 
     // Test cases
-    const testInput =
-      "00100\n11110\n10110\n10111\n10101\n01111\n00111\n11100\n10000\n11001\n00010\n01010".split(
-        /\n/gim
-      );
-
     const countedBits = countBits(testInput);
     expect(countedBits).toHaveLength(testInput[0].length);
 
