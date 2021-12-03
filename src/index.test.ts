@@ -31,7 +31,7 @@ describe("Day 1: Sonar Sweep", () => {
 
     expect(resolver(testInput)).toBe(5);
 
-    // Solution (...)
+    // Solution (1378)
     const input = (await readLines("./day-01/input.txt")).map((num) =>
       parseInt(num)
     );
@@ -56,7 +56,7 @@ describe("Day 2: Dive!", () => {
 
     expect(resolver(testInput)).toBe(150);
 
-    // Solution (...)
+    // Solution (1604850)
     const input = await readLines("./day-02/input.txt");
 
     expect(resolver(input)).toBe(1604850);
@@ -72,9 +72,41 @@ describe("Day 2: Dive!", () => {
 
     expect(resolver(testInput)).toBe(900);
 
-    // Solution (...)
+    // Solution (1685186100)
     const input = await readLines("./day-02/input.txt");
 
     expect(resolver(input)).toBe(1685186100);
+  });
+});
+
+describe("Day 3: Binary Diagnostic", () => {
+  test("Part 1", async () => {
+    const module = await import("../day-03/part-one");
+    const countBits = module.countBits;
+    const getGammaRate = module.getGammaRate;
+    const getEpsilonRate = module.getEpsilonRate;
+    const resolver = module.default;
+
+    // Test cases
+    const testInput =
+      "00100\n11110\n10110\n10111\n10101\n01111\n00111\n11100\n10000\n11001\n00010\n01010".split(
+        /\n/gim
+      );
+
+    const countedBits = countBits(testInput);
+    expect(countedBits).toHaveLength(testInput[0].length);
+
+    const gammaRate = getGammaRate(countedBits, testInput.length);
+    expect(gammaRate).toBe(22);
+
+    const epsilonRate = getEpsilonRate(countedBits, testInput.length);
+    expect(epsilonRate).toBe(9);
+
+    expect(resolver(testInput)).toBe(198);
+
+    // Solution (1092896)
+    const input = await readLines("./day-03/input.txt");
+
+    expect(resolver(input)).toBe(1092896);
   });
 });
