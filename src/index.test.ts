@@ -1,4 +1,4 @@
-import { readInputFile } from "./utils";
+import { readLines } from "./utils";
 
 describe("Day One", () => {
   test("Sonar Sweep: Part One", async () => {
@@ -13,9 +13,9 @@ describe("Day One", () => {
     expect(resolver(testInput)).toBe(7);
 
     // Solution (1342)
-    const input = (await readInputFile("./day-1-sonar-sweep/input.txt"))
-      .split(/\n/gim)
-      .map((num) => parseInt(num));
+    const input = (await readLines("./day-1-sonar-sweep/input.txt")).map(
+      (num) => parseInt(num)
+    );
 
     expect(resolver(input)).toBe(1342);
   });
@@ -32,9 +32,9 @@ describe("Day One", () => {
     expect(resolver(testInput)).toBe(5);
 
     // Solution (...)
-    const input = (await readInputFile("./day-1-sonar-sweep/input.txt"))
-      .split(/\n/gim)
-      .map((num) => parseInt(num));
+    const input = (await readLines("./day-1-sonar-sweep/input.txt")).map(
+      (num) => parseInt(num)
+    );
 
     expect(resolver(input)).toBe(1378);
   });
@@ -57,9 +57,7 @@ describe("Day Two", () => {
     expect(resolver(testInput)).toBe(150);
 
     // Solution (...)
-    const input = (await readInputFile("./day-2-dive!/input.txt")).split(
-      /\n/gim
-    );
+    const input = await readLines("./day-2-dive!/input.txt");
 
     expect(resolver(input)).toBe(1604850);
   });
@@ -75,9 +73,7 @@ describe("Day Two", () => {
     expect(resolver(testInput)).toBe(900);
 
     // Solution (...)
-    const input = (await readInputFile("./day-2-dive!/input.txt")).split(
-      /\n/gim
-    );
+    const input = await readLines("./day-2-dive!/input.txt");
 
     expect(resolver(input)).toBe(1685186100);
   });
