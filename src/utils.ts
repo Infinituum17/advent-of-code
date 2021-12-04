@@ -1,6 +1,6 @@
 import { readFile } from "fs/promises";
 
-async function readInputFile(path: string) {
+export async function readInputFile(path: string) {
   const fileBuffer = await readFile(path);
   return fileBuffer.toString();
 }
