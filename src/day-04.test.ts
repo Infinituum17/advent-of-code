@@ -28,7 +28,23 @@ describe("Day 4: Giant Squid", () => {
   });
 
   test("Part 2", async () => {
-    // const module = await import("../day-04/part-two");
-    // const resolver = module.default;
+    const module = await import("../day-04/part-two");
+    const LastWinBingoGame = module.default;
+
+    const [testNumberList, ...testTableList] = testInput;
+
+    const testGame = new LastWinBingoGame(testNumberList, testTableList);
+
+    // Test cases
+    expect(testGame.getWinnerScore()).toBe(1924);
+
+    const input = (await readInputFile("./day-04/input.txt")).split(/\n\n/gim);
+
+    const [numberList, ...tableList] = input;
+
+    const game = new LastWinBingoGame(numberList, tableList);
+
+    // Solution (2634)
+    expect(game.getWinnerScore()).toBe(2634);
   });
 });
