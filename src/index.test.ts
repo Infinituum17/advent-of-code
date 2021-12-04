@@ -102,4 +102,39 @@ describe("Day 3: Binary Diagnostic", () => {
 
     expect(resolver(input)).toBe(1092896);
   });
+
+  test("Part 2", async () => {
+    const module = await import("../day-03/part-two");
+    const getOxygenRating = module.getOxygenRating;
+    const getCO2ScrubberRating = module.getCO2ScrubberRating;
+    const getBitOccurrencyByIndex = module.getBitOccurrenceByIndex;
+    const recursiveBitSearch = module.recursiveBitSearch;
+    const resolver = module.default;
+
+    //Test cases
+    const bitOccurrency = getBitOccurrencyByIndex(testInput, 0);
+
+    expect(bitOccurrency).toHaveLength(2);
+    expect(bitOccurrency[0]).toHaveLength(5);
+    expect(bitOccurrency[1]).toHaveLength(7);
+
+    const bitSearchResult = recursiveBitSearch(testInput, 0, true);
+
+    expect(bitSearchResult).toBe("10111");
+
+    const oxygenRating = getOxygenRating(testInput);
+
+    expect(oxygenRating).toBe(23);
+
+    const CO2ScrubberRating = getCO2ScrubberRating(testInput);
+
+    expect(CO2ScrubberRating).toBe(10);
+
+    expect(resolver(testInput)).toBe(230);
+
+    // Solution (4672151)
+    const input = await readLines("./day-03/input.txt");
+
+    expect(resolver(input)).toBe(4672151);
+  });
 });
