@@ -25,9 +25,9 @@ describe("Day 3: Binary Diagnostic", () => {
 
     expect(resolver(testInput)).toBe(198);
 
-    // Solution (1092896)
     const input = await readLines("./day-03/input.txt");
 
+    // Solution (1092896)
     expect(resolver(input)).toBe(1092896);
   });
 
@@ -60,9 +60,9 @@ describe("Day 3: Binary Diagnostic", () => {
 
     expect(resolver(testInput)).toBe(230);
 
-    // Solution (4672151)
     const input = await readLines("./day-03/input.txt");
 
+    // Solution (4672151)
     expect(resolver(input)).toBe(4672151);
   });
 });

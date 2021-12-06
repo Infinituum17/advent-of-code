@@ -12,11 +12,11 @@ describe("Day 1: Sonar Sweep", () => {
     // Test cases
     expect(resolver(testInput)).toBe(7);
 
-    // Solution (1342)
     const input = (await readLines("./day-01/input.txt")).map((num) =>
       parseInt(num)
     );
 
+    // Solution (1342)
     expect(resolver(input)).toBe(1342);
   });
 
@@ -27,11 +27,11 @@ describe("Day 1: Sonar Sweep", () => {
     // Test cases
     expect(resolver(testInput)).toBe(5);
 
-    // Solution (1378)
     const input = (await readLines("./day-01/input.txt")).map((num) =>
       parseInt(num)
     );
 
+    // Solution (1378)
     expect(resolver(input)).toBe(1378);
   });
 });
