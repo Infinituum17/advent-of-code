@@ -18,4 +18,17 @@ describe("Day 5: Hydrothermal Venture", () => {
     // Solution (5690)
     expect(resolver(input)).toBe(5690);
   });
+
+  test("Part 2", async () => {
+    const module = await import("../day-05/part-two");
+    const resolver = module.default;
+
+    // Test cases
+    expect(resolver(testInput)).toBe(12);
+
+    const input = await readLines("./day-05/input.txt");
+
+    // Solution (17741)
+    expect(resolver(input)).toBe(17741);
+  });
 });
