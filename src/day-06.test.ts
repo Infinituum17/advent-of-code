@@ -18,4 +18,19 @@ describe("Day 6: Lanternfish", () => {
     // Solution (343441)
     expect(resolver(input, 80)).toBe(343441);
   });
+
+  test("Part 2", async () => {
+    const module = await import("../day-06/part-two");
+    const resolver = module.default;
+
+    // Test cases
+    expect(resolver(testInput, 256)).toBe(26984457539);
+
+    const input = (await readInputFile("./day-06/input.txt"))
+      .split(/\,/gim)
+      .map((v) => parseInt(v));
+
+    // Solution (1569108373832)
+    expect(resolver(input, 256)).toBe(1569108373832);
+  });
 });
