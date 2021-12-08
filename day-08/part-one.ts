@@ -1,5 +1,5 @@
 export default function resolver(input: string[]) {
-  const [signalPatterns, outputValues] = parseMessage(input);
+  const [_, outputValues] = parseMessage(input);
 
   return getUniqueDigits(outputValues).length;
 }
