@@ -27,10 +27,6 @@ export function checkNearbyPointsForLower(
   const previousJ = j - 1 >= minJ ? heightMap[i][j - 1] : null;
   const nextJ = j + 1 <= maxJ ? heightMap[i][j + 1] : null;
 
-  /* console.log(
-    `previousI: ${previousI}\nnextI: ${nextI}\npreviousJ: ${previousJ}\nnextJ: ${nextJ}`
-  ); */
-
   let lowest = true;
 
   if (
@@ -41,18 +37,10 @@ export function checkNearbyPointsForLower(
   )
     lowest = false;
 
-  /*   console.log(
-    `previousI: ${previousI !== null && previousI < heightMap[i][j]}\nnextI: ${
-      nextI !== null && nextI < heightMap[i][j]
-    }\npreviousJ: ${
-      previousJ !== null && previousJ < heightMap[i][j]
-    }\nnextJ: ${nextJ !== null && nextJ < heightMap[i][j]}`
-  ); */
-
   return lowest;
 }
 
-type pointObjectType = { depth: number; x: number; y: number };
+export type pointObjectType = { depth: number; x: number; y: number };
 
 export function getLowPoints(heightMap: number[][]): pointObjectType[] {
   const lowPoints: pointObjectType[] = [];
