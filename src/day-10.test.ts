@@ -1,5 +1,7 @@
 import { readLines } from "./utils";
+
 import { getCorruptedScore, getFirstIllegalChar } from "../day-10/part-one";
+import { getLastCompletion, getUncompleteScore } from "../day-10/part-two";
 
 const testInput =
   "[({(<(())[]>[[{[]{<()<>>\n[(()[<>])]({[<{<<[]>>(\n{([(<{}[<>[]}>{[]{[(<()>\n(((({<>}<{<{<>}{[]{[]{}\n[[<[([]))<([[{}[[()]]]\n[{[{({}]{}}([{[{{{}}([]\n{<[[]]>}<{[{[{[]{()[[[]\n[<(<(<(<{}))><([]([]()\n<{([([[(<>()){}]>(<<{{\n<{([{{}}[<[[[<>{}]]]>[]]".split(
@@ -19,5 +21,14 @@ describe("Day 10: Syntax Scoring", () => {
     expect(getCorruptedScore(input)).toBe(318099);
   });
 
-  test("Part 2", async () => {});
+  test("Part 2", async () => {
+    // Test cases
+    expect(getLastCompletion(testInput[9]).join("")).toBe("])}>");
+    expect(getUncompleteScore(testInput)).toBe(288957);
+
+    const input = await readLines("./day-10/input.txt");
+
+    // Solution (2389738699)
+    expect(getUncompleteScore(input)).toBe(2389738699);
+  });
 });
