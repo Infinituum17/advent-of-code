@@ -1,5 +1,6 @@
 import { readLines } from "./utils";
 import { OctopusMap, simulateSteps } from "../day-11/part-one";
+import { getAllOctopusesFlashStep } from "../day-11/part-two";
 
 const testInput =
   "5483143223\n2745854711\n5264556173\n6141336146\n6357385478\n4167524645\n2176841721\n6882881134\n4846848554\n5283751526".split(
@@ -31,5 +32,14 @@ describe("Day 11: Dumbo Octopus", () => {
 
     // Solution (1717)
     expect(simulateSteps(input, 100)).toBe(1717);
+  });
+
+  test("Part 2", async () => {
+    expect(getAllOctopusesFlashStep(testInput)).toBe(195);
+
+    const input = await readLines("./day-11/input.txt");
+
+    // Solution (1717)
+    expect(getAllOctopusesFlashStep(input)).toBe(476);
   });
 });
