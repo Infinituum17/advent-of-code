@@ -1,4 +1,4 @@
-export class Graph {
+export default class Graph {
   private points: Point[];
   private foldingSteps: FoldingStep[];
   private xMax: number;
@@ -41,10 +41,10 @@ export class Graph {
         newLine += `${found ? "#" : "."}`;
       }
 
+      table += newLine;
+
       if (y + 1 < this.yMax) {
-        table += newLine + "\n";
-      } else {
-        table += newLine;
+        table += "\n";
       }
     }
 
@@ -82,7 +82,7 @@ export class Graph {
     const newPointCollection = this.points.filter((point) => point.x < value);
 
     for (const point of outPoints) {
-      const newPoint = { x: this.xMax - point.x - 1, y: point.y };
+      const newPoint = { x: 2 * value - point.x, y: point.y };
 
       if (
         newPointCollection.find(
@@ -104,7 +104,7 @@ export class Graph {
     const newPointCollection = this.points.filter((point) => point.y < value);
 
     for (const point of outPoints) {
-      const newPoint = { x: point.x, y: this.yMax - point.y - 1 };
+      const newPoint = { x: point.x, y: 2 * value - point.y };
 
       if (
         newPointCollection.find(
