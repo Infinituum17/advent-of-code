@@ -1,5 +1,3 @@
-import { getSumRiskLevels } from "../day-09/part-one";
-
 export function parseRisks(graph: string[]): number[][] {
   const newGraph: number[][] = [];
 
