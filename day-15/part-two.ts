@@ -1,3 +1,46 @@
+export function parseRisksX5(graph: number[][]) {
+  let scaleFactor = 5;
+
+  let lookup = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  let res = new Array(graph.length * scaleFactor) as number[][];
+  for (let y = 0; y < res.length; y++) {
+    let row = new Array(graph[0].length * scaleFactor) as number[];
+    for (let x = 0; x < row.length; x++) {
+      let origX = x % graph[0].length,
+        origY = y % graph.length;
+      let origValue = graph[origY][origX];
+      let xShift = Math.floor(y / graph.length);
+      let yShift = Math.floor(x / graph[0].length);
+
+      row[x] = lookup[(origValue - 1 + xShift + yShift) % lookup.length];
+    }
+    res[y] = row;
+  }
+  return res;
+}
+
+export function createIncrementingArray(
+  array: number[],
+  base: number[],
+  length: number,
+  times: number
+): number[] {
+  const incrementBase = increment(base);
+
+  array = array.concat(incrementBase);
+
+  if (times === 2) {
+    return array;
+  }
+
+  return createIncrementingArray(array, incrementBase, length, times - 1);
+}
+
+export function increment(array: number[]) {
+  return array.map((v) => (v % 9) + 1);
+}
+
 export function parseRisks(graph: string[]): number[][] {
   const newGraph: number[][] = [];
 
