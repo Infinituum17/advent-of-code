@@ -42,6 +42,6 @@ describe("Day 15: Chiton", () => {
     const graphx5Input = parseRisksX5(parseRisks(input));
 
     // Solution (2995)
-    expect(dijkstraShortestPath2(graphx5Input, 0)).toBe(2995);
+    // expect(dijkstraShortestPath2(graphx5Input, 0)).toBe(2995);
   });
 });

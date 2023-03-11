@@ -1,9 +1,10 @@
 export function parseRisksX5(graph: number[][]) {
-  let scaleFactor = 5;
+  const scaleFactor = 5;
 
   let lookup = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   let res = new Array(graph.length * scaleFactor) as number[][];
+
   for (let y = 0; y < res.length; y++) {
     let row = new Array(graph[0].length * scaleFactor) as number[];
     for (let x = 0; x < row.length; x++) {
