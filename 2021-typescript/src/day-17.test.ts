@@ -1,4 +1,5 @@
 import { Bound, getFinalXPosition, isCoordInRange, isInRange, shoot } from "../day-17/part-one";
+import { getReachedTargetCount } from "../day-17/part-two";
 import { readLines } from "./utils";
 
 describe("Day 17: Trick Shot", () => {
@@ -25,5 +26,17 @@ describe("Day 17: Trick Shot", () => {
     const [xBounds, yBounds] = (await readLines("./day-17/input.txt"))[0].split(/ /).map(v => v.split(",").map(i => parseInt(i)));
 
     expect(shoot(xBounds as Bound, yBounds as Bound)).toBe(3655);
+  });
+
+  test("Part 2: Example 1", () => {
+    const [xBounds, yBounds]: [Bound, Bound] = [[20, 30], [-10, -5]];
+
+    expect(getReachedTargetCount(xBounds, yBounds)).toBe(112)
+  });
+
+  test("Part 2", async () => {
+    const [xBounds, yBounds] = (await readLines("./day-17/input.txt"))[0].split(/ /).map(v => v.split(",").map(i => parseInt(i)));
+
+    expect(getReachedTargetCount(xBounds as Bound, yBounds as Bound)).toBe(1447)
   });
 });
