@@ -17,7 +17,7 @@ describe("Day 4: Giant Squid", () => {
     // Test cases
     expect(testGame.getWinnerScore()).toBe(4512);
 
-    const input = (await readInputFile("./data/day-04-input.txt")).split(/\n\n/gim);
+    const input = (await readInputFile("day-04-input")).split(/\n\n/gim);
 
     const [numberList, ...tableList] = input;
 
@@ -35,7 +35,7 @@ describe("Day 4: Giant Squid", () => {
     // Test cases
     expect(testGame.getWinnerScore()).toBe(1924);
 
-    const input = (await readInputFile("./data/day-04-input.txt")).split(/\n\n/gim);
+    const input = (await readInputFile("day-04-input")).split(/\n\n/gim);
 
     const [numberList, ...tableList] = input;
 

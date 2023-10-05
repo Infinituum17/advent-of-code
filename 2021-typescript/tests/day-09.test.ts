@@ -34,7 +34,7 @@ describe("Day 9: Smoke Basin", () => {
     const sumRiskLevels = getSumRiskLevels(lowPoints);
     expect(sumRiskLevels).toBe(15);
 
-    const input = await readInputFile("./data/day-09-input.txt");
+    const input = await readInputFile("day-09-input");
 
     // Solution (607)
     const inputHeightMap = parseHeightMap(input);
@@ -55,7 +55,7 @@ describe("Day 9: Smoke Basin", () => {
       getThreeLargestBasinsMultiplied(basinSizes);
     expect(threeLargestBasinsMultiplied).toBe(1134);
 
-    const input = await readInputFile("./data/day-09-input.txt");
+    const input = await readInputFile("day-09-input");
 
     // Solution (900864)
     const inputHeightMap = parseHeightMap(input);

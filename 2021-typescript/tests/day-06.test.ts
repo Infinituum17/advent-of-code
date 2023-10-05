@@ -11,7 +11,7 @@ describe("Day 6: Lanternfish", () => {
     expect(resolver1(testInput, 18)).toBe(26);
     expect(resolver1(testInput, 80)).toBe(5934);
 
-    const input = (await readInputFile("./data/day-06-input.txt"))
+    const input = (await readInputFile("day-06-input"))
       .split(/\,/gim)
       .map((v) => parseInt(v));
 
@@ -23,7 +23,7 @@ describe("Day 6: Lanternfish", () => {
     // Test cases
     expect(resolver2(testInput, 256)).toBe(26984457539);
 
-    const input = (await readInputFile("./data/day-06-input.txt"))
+    const input = (await readInputFile("day-06-input"))
       .split(/\,/gim)
       .map((v) => parseInt(v));
 

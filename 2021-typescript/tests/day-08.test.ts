@@ -18,7 +18,7 @@ describe("Day 8: Seven Segment Search", () => {
     // Test cases
     expect(resolver1(testInput)).toBe(26);
 
-    const input = await readLines("./data/day-08-input.txt");
+    const input = await readLines("day-08-input");
 
     // Solution (318)
     expect(resolver1(input)).toBe(318);
@@ -29,7 +29,7 @@ describe("Day 8: Seven Segment Search", () => {
     expect(resolver2(testInputReduced)).toBe(5353);
     expect(resolver2(testInput)).toBe(61229);
 
-    const input = await readLines("./data/day-08-input.txt");
+    const input = await readLines("day-08-input");
 
     // Solution (996280)
     expect(resolver2(input)).toBe(996280);

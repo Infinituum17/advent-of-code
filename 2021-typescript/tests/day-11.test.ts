@@ -28,7 +28,7 @@ describe("Day 11: Dumbo Octopus", () => {
     expect(simulateSteps(testInput, 10)).toBe(204);
     expect(simulateSteps(testInput, 100)).toBe(1656);
 
-    const input = await readLines("./data/day-11-input.txt");
+    const input = await readLines("day-11-input");
 
     // Solution (1717)
     expect(simulateSteps(input, 100)).toBe(1717);
@@ -37,7 +37,7 @@ describe("Day 11: Dumbo Octopus", () => {
   test("Part 2", async () => {
     expect(getAllOctopusesFlashStep(testInput)).toBe(195);
 
-    const input = await readLines("./data/day-11-input.txt");
+    const input = await readLines("day-11-input");
 
     // Solution (1717)
     expect(getAllOctopusesFlashStep(input)).toBe(476);

@@ -23,7 +23,7 @@ describe("Day 17: Trick Shot", () => {
   });
 
   test("Part 1", async () => {
-    const [xBounds, yBounds] = (await readLines("./data/day-17-input.txt"))[0].split(/ /).map(v => v.split(",").map(i => parseInt(i)));
+    const [xBounds, yBounds] = (await readLines("day-17-input"))[0].split(/ /).map(v => v.split(",").map(i => parseInt(i)));
 
     expect(shoot(xBounds as Bound, yBounds as Bound)).toBe(3655);
   });
@@ -35,7 +35,7 @@ describe("Day 17: Trick Shot", () => {
   });
 
   test("Part 2", async () => {
-    const [xBounds, yBounds] = (await readLines("./data/day-17-input.txt"))[0].split(/ /).map(v => v.split(",").map(i => parseInt(i)));
+    const [xBounds, yBounds] = (await readLines("day-17-input"))[0].split(/ /).map(v => v.split(",").map(i => parseInt(i)));
 
     expect(getReachedTargetCount(xBounds as Bound, yBounds as Bound)).toBe(1447)
   });

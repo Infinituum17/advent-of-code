@@ -18,7 +18,7 @@ describe("Day 13: Transparent Origami", () => {
     testGraph.foldGraph();
     expect(testGraph.getPoints()).toBe(17);
 
-    const input = await readLines("./data/day-13-input.txt");
+    const input = await readLines("day-13-input");
 
     const graph = new Graph(input);
 
@@ -29,7 +29,7 @@ describe("Day 13: Transparent Origami", () => {
   });
 
   test("Part 2", async () => {
-    const input = await readLines("./data/day-13-input.txt");
+    const input = await readLines("day-13-input");
 
     const graph = new Graph(input);
 

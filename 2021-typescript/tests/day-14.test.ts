@@ -38,7 +38,7 @@ describe("Day 14: Extended Polymerization", () => {
 
     expect(getDifference1(polymerizeAll1(testInput, 10))).toBe(1588);
 
-    const input = await readLines("./data/day-14-input.txt");
+    const input = await readLines("day-14-input");
 
     // Solution (2509)
     expect(getDifference1(polymerizeAll1(input, 10))).toBe(2509);
@@ -71,7 +71,7 @@ describe("Day 14: Extended Polymerization", () => {
 
     expect(getDifference2(polymerizeAll2(testInput, 40))).toBe(2188189693529);
 
-    const input = await readLines("./data/day-14-input.txt");
+    const input = await readLines("day-14-input");
 
     // Solution (2827627697643)
     expect(getDifference2(polymerizeAll2(input, 40))).toBe(2827627697643);

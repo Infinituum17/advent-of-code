@@ -197,7 +197,7 @@ describe("Day 18: Snailfish", () => {
   });
 
   test("Part 1", async () => {
-    const input: RawSnailfishNumber[] = (await readLines("./data/day-18-input.txt")).map(line => JSON.parse(line));
+    const input: RawSnailfishNumber[] = (await readLines("day-18-input")).map(line => JSON.parse(line));
 
     const tree = new Tree(input[0]);
 
@@ -212,7 +212,7 @@ describe("Day 18: Snailfish", () => {
   });
 
   test("Part 2", async () => {
-    const input: RawSnailfishNumber[] = (await readLines("./data/day-18-input.txt")).map(line => JSON.parse(line));
+    const input: RawSnailfishNumber[] = (await readLines("day-18-input")).map(line => JSON.parse(line));
     let maxMagnitude = 0;
 
     for (let i = 0; i < input.length; i++) {

@@ -16,7 +16,7 @@ describe("Day 7: The Treachery of Whales", () => {
 
     expect(resolver1(testInput)).toBe(37);
 
-    const input = (await readInputFile("./data/day-07-input.txt"))
+    const input = (await readInputFile("day-07-input"))
       .split(/\,/gim)
       .map((v) => parseInt(v));
 
@@ -29,7 +29,7 @@ describe("Day 7: The Treachery of Whales", () => {
     expect(getSumUntilPosition(4)).toBe(1 + 2 + 3 + 4);
     expect(resolver2(testInput)).toBe(168);
 
-    const input = (await readInputFile("./data/day-07-input.txt"))
+    const input = (await readInputFile("day-07-input"))
       .split(/\,/gim)
       .map((v) => parseInt(v));
 

@@ -1,7 +1,7 @@
 import { readFile } from "fs/promises";
 
-export async function readInputFile(path: string) {
-  const fileBuffer = await readFile(path);
+export async function readInputFile(filename: string, folder = "./data/") {
+  const fileBuffer = await readFile(`${folder}${filename}.txt`);
   return fileBuffer.toString();
 }
 

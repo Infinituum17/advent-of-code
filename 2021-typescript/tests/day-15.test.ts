@@ -18,7 +18,7 @@ describe("Day 15: Chiton", () => {
     // Test cases
     expect(dijkstraShortestPath(parseRisks(testInput), 0)).toBe(40);
 
-    const input = await readLines("./data/day-15-input.txt");
+    const input = await readLines("day-15-input");
 
     // Solution (685)
     expect(dijkstraShortestPath(parseRisks(input), 0)).toBe(685);
@@ -37,7 +37,7 @@ describe("Day 15: Chiton", () => {
 
     expect(dijkstraShortestPath2(graphx5, 0)).toBe(315);
 
-    const input = await readLines("./data/day-15-input.txt");
+    const input = await readLines("day-15-input");
 
     const graphx5Input = parseRisksX5(parseRisks(input));
 

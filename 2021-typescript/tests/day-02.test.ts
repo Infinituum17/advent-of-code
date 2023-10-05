@@ -17,7 +17,7 @@ describe("Day 2: Dive!", () => {
 
     expect(resolver1(testInput)).toBe(150);
 
-    const input = await readLines("./data/day-02-input.txt");
+    const input = await readLines("day-02-input");
 
     // Solution (1604850)
     expect(resolver1(input)).toBe(1604850);
@@ -27,7 +27,7 @@ describe("Day 2: Dive!", () => {
     // Test cases
     expect(resolver2(testInput)).toBe(900);
 
-    const input = await readLines("./data/day-02-input.txt");
+    const input = await readLines("day-02-input");
 
     // Solution (1685186100)
     expect(resolver2(input)).toBe(1685186100);

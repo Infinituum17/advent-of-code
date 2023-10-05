@@ -83,7 +83,7 @@ describe("Day 16: Packet Decoder", () => {
   });
 
   test("Part 1", async () => {
-    const input = (await readLines("./data/day-16-input.txt"))[0];
+    const input = (await readLines("day-16-input"))[0];
 
     expect(Decoder.decode(input).getVersionSum()).toBe(957);
   });
@@ -100,7 +100,7 @@ describe("Day 16: Packet Decoder", () => {
   });
 
   test("Part 2", async () => {
-    const input = (await readLines('./data/day-16-input.txt'))[0];
+    const input = (await readLines('day-16-input'))[0];
 
     expect(AdvancedDecoder.decode(input).evaluate()).toBe(744953223228);
   });

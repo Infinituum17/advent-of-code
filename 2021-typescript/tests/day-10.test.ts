@@ -15,7 +15,7 @@ describe("Day 10: Syntax Scoring", () => {
     expect(getFirstIllegalChar(testInput[2])).toBe("}");
     expect(getCorruptedScore(testInput)).toBe(26397);
 
-    const input = await readLines("./data/day-10-input.txt");
+    const input = await readLines("day-10-input");
 
     // Solution (318099)
     expect(getCorruptedScore(input)).toBe(318099);
@@ -26,7 +26,7 @@ describe("Day 10: Syntax Scoring", () => {
     expect(getLastCompletion(testInput[9]).join("")).toBe("])}>");
     expect(getUncompleteScore(testInput)).toBe(288957);
 
-    const input = await readLines("./data/day-10-input.txt");
+    const input = await readLines("day-10-input");
 
     // Solution (2389738699)
     expect(getUncompleteScore(input)).toBe(2389738699);

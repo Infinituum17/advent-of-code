@@ -13,7 +13,7 @@ describe("Day 5: Hydrothermal Venture", () => {
     // Test cases
     expect(resolver1(testInput)).toBe(5);
 
-    const input = await readLines("./data/day-05-input.txt");
+    const input = await readLines("day-05-input");
 
     // Solution (5690)
     expect(resolver1(input)).toBe(5690);
@@ -23,7 +23,7 @@ describe("Day 5: Hydrothermal Venture", () => {
     // Test cases
     expect(resolver2(testInput)).toBe(12);
 
-    const input = await readLines("./data/day-05-input.txt");
+    const input = await readLines("day-05-input");
 
     // Solution (17741)
     expect(resolver2(input)).toBe(17741);
