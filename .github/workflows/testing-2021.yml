@@ -1,0 +1,17 @@
+name: Testing
+on: [push]
+jobs:
+  Test-2021:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "./2021-typescript"
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20.x'
+      - name: Installing dependencies
+        run: npm install
+      - name: Running tests
+        run: npm start
