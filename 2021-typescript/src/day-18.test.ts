@@ -206,6 +206,26 @@ describe("Day 18: Snailfish", () => {
 
     tree.reduce();
 
-    console.log(tree.magnitude())
+    expect(tree.magnitude()).toEqual(3524);
+  });
+
+  test("Part 2", () => {
+    let maxMagnitude = 0;
+
+    for (let i = 0; i < inputSnailfishNumbers.length; i++) {
+      for (let j = 0; j < inputSnailfishNumbers.length; j++) {
+        if (i !== j) {
+          const tree = new Tree(inputSnailfishNumbers[i]);
+          tree.mergeReduce([inputSnailfishNumbers[j]]);
+          const mag = tree.magnitude();
+
+          if (mag > maxMagnitude) {
+            maxMagnitude = tree.magnitude();
+          }
+        }
+      }
+    }
+
+    expect(maxMagnitude).toEqual(4656);
   });
 });
