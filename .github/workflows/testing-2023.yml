@@ -1,0 +1,15 @@
+name: Testing 2023
+on: [push]
+jobs:
+  Test-2023:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "./2023-rust"
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Checking that code can be compiled
+        run: cargo check
+      - name: Running tests
+        run: cargo test 
