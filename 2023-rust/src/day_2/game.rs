@@ -15,6 +15,30 @@ impl Game {
             .iter()
             .all(|turn| turn.red <= 12 && turn.green <= 13 && turn.blue <= 14)
     }
+
+    pub fn min_colors(&self) -> (u8, u8, u8) {
+        self.turns.iter().fold((0, 0, 0), |mut a, turn| {
+            if turn.red != 0 && turn.red > a.0 {
+                a.0 = turn.red;
+            }
+
+            if turn.green != 0 && turn.green > a.1 {
+                a.1 = turn.green;
+            }
+
+            if turn.blue != 0 && turn.blue > a.2 {
+                a.2 = turn.blue;
+            }
+
+            a
+        })
+    }
+
+    pub fn power(&self) -> u32 {
+        let (r, g, b) = self.min_colors();
+
+        (r as u32) * (g as u32) * (b as u32)
+    }
 }
 
 pub fn parse_game(line: &str) -> Game {
