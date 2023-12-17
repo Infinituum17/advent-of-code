@@ -32,7 +32,7 @@ mod part_1 {
 
     #[test]
     fn final_result() {
-        let input_str = read_file("./input/day1.txt");
+        let input_str = read_file("./input/day_1.txt");
         let input = match input_str {
             Ok(input) => input,
             Err(error) => panic!("Could not read file: {error}"),
@@ -86,7 +86,7 @@ mod part_2 {
 
     #[test]
     fn final_result() {
-        let input_str = read_file("./input/day1.txt");
+        let input_str = read_file("./input/day_1.txt");
         let input = match input_str {
             Ok(input) => input,
             Err(error) => panic!("Could not read file: {error}"),
