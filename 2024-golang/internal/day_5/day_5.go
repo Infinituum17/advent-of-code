@@ -50,7 +50,7 @@ func GetIncorrectSequences(left, right map[int][]int, sequences [][]int) [][]int
 		}
 	}
 
-	return ReorderSequences(left, right, incorrect)
+	return ReorderSequences(left, incorrect)
 }
 
 type Node struct {
@@ -58,15 +58,15 @@ type Node struct {
 	next  []int
 }
 
-func ReorderSequences(left, right map[int][]int, seq [][]int) [][]int {
+func ReorderSequences(left map[int][]int, seq [][]int) [][]int {
 	for i, s := range seq {
-		seq[i] = ReorderSequence(left, right, s)
+		seq[i] = ReorderSequence(left, s)
 	}
 
 	return seq
 }
 
-func ReorderSequence(left, right map[int][]int, s []int) []int {
+func ReorderSequence(left map[int][]int, s []int) []int {
 	list := []Node{}
 
 	for _, v := range s {
