@@ -6,7 +6,10 @@ import (
 )
 
 func GetData() string {
-	file := "./data.txt"
+	return GetFile("./data.txt")
+}
+
+func GetFile(file string) string {
 	res, err := os.ReadFile(file)
 
 	if err != nil {
