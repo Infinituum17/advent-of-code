@@ -55,8 +55,8 @@ func TestComposeLists(t *testing.T) {
 		t.Errorf("right[5]: %v != %v", right[5], 3)
 	}
 
-	t.Logf("Left list: %v\n", left)
-	t.Logf("Right list: %v", right)
+	// t.Logf("Left list: %v\n", left)
+	// t.Logf("Right list: %v", right)
 }
 
 func TestComputeDistance(t *testing.T) {
