@@ -3,6 +3,7 @@ package day6
 import (
 	"fmt"
 	"strings"
+	"sync"
 
 	"github.com/Infinituum17/advent-of-code/internal/tools"
 )
@@ -26,6 +27,7 @@ func Solve() {
 	data := tools.GetData()
 
 	SolvePart1(data)
+	SolvePart2(data)
 }
 
 func SolvePart1(data string) {
@@ -34,6 +36,75 @@ func SolvePart1(data string) {
 	count := CountSpots(path)
 
 	tools.SolvePart1("Day 6", count)
+}
+
+func SolvePart2(data string) {
+	table, guard := ParseTable(data)
+	path := TracePathPositions(table, guard)
+	count := CountPathLoops(table, guard, path)
+
+	tools.SolvePart2("Day 6", count)
+}
+
+func CountPathLoops(table Table, guard Guard, path []Position) int {
+	var wg sync.WaitGroup
+	var mt sync.Mutex
+	count := 0
+
+	for _, pos := range path {
+		t := DupTable(table)
+		t[pos.y][pos.x] = "#"
+		wg.Add(1)
+		go CheckLoop(&t, guard, &wg, &mt, &count, pos)
+	}
+
+	wg.Wait()
+
+	return count
+}
+
+func CheckLoop(table *Table, guard Guard, wg *sync.WaitGroup, mt *sync.Mutex, count *int, p Position) {
+	defer wg.Done()
+
+	posMap := MakePositionMap()
+	pos, dir := Position{guard.pos.x, guard.pos.y}, Direction{guard.dir.v, guard.dir.h}
+
+	for {
+		x, y := NextPosition(pos.x, pos.y, dir)
+
+		if y < 0 || y >= len(*table) || x < 0 || x >= len((*table)[0]) {
+			break
+		}
+
+		if (*table)[y][x] != "#" {
+			pos.x, pos.y = x, y
+			continue
+		}
+
+		if posMap[dir][pos] {
+			mt.Lock()
+			*count++
+			mt.Unlock()
+
+			return
+		}
+
+		posMap[dir][pos] = true
+
+		dir = Rotate(dir)
+
+	}
+}
+
+func MakePositionMap() map[Direction]map[Position]bool {
+	m := make(map[Direction]map[Position]bool)
+
+	m[Direction{1, 0}] = make(map[Position]bool)
+	m[Direction{-1, 0}] = make(map[Position]bool)
+	m[Direction{0, 1}] = make(map[Position]bool)
+	m[Direction{0, -1}] = make(map[Position]bool)
+
+	return m
 }
 
 func LocateGuard(data Table) Guard {
@@ -71,7 +142,7 @@ func ParseTable(data string) (Table, Guard) {
 }
 
 func TracePath(table Table, guard Guard) Table {
-	pathTable := CreatePathTable(table)
+	pathTable := DupTable(table)
 	x := guard.pos.x
 	y := guard.pos.y
 
@@ -94,6 +165,21 @@ func TracePath(table Table, guard Guard) Table {
 	}
 
 	return pathTable
+}
+
+func TracePathPositions(table Table, guard Guard) []Position {
+	path := TracePath(table, guard)
+	positions := []Position{}
+
+	for j := range path {
+		for i := range path[j] {
+			if path[j][i] == "x" && (guard.pos.x != i || guard.pos.y != j) {
+				positions = append(positions, Position{i, j})
+			}
+		}
+	}
+
+	return positions
 }
 
 func NextPosition(x, y int, dir Direction) (int, int) {
@@ -132,7 +218,7 @@ func Rotate(dir Direction) Direction {
 	panic("Invalid direction")
 }
 
-func CreatePathTable(ref Table) Table {
+func DupTable(ref Table) Table {
 	pathTable := Table{}
 
 	for y := range ref {
